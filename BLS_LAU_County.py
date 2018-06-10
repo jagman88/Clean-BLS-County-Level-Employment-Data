@@ -13,6 +13,25 @@
 #--------------------------------------
 
 import pandas as pd
+import requests
+
+#------------------------------------------------------
+# Download and save .TXT files from BLS website into current directory
+
+BLS_url = 'https://download.bls.gov/pub/time.series/la/'
+
+filenames = ['la.area',
+              'la.data.0.CurrentU90-94', 'la.data.0.CurrentU95-99',
+              'la.data.0.CurrentU00-04', 'la.data.0.CurrentU05-09',
+              'la.data.0.CurrentU10-14','la.data.0.CurrentU15-19']
+
+for xx in filenames:
+    dls = BLS_url+xx
+    resp = requests.get(dls)
+
+    output = open(xx+'.txt', 'wb')
+    output.write(resp.content)
+    output.close()
 
 #------------------------------------------------------
 # Import area information
