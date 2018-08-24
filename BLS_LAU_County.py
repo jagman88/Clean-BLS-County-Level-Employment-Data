@@ -35,7 +35,7 @@ for xx in filenames:
 
 #------------------------------------------------------
 # Import area information
-df_areas = pd.read_table('la_area.txt')
+df_areas = pd.read_table('la.area.txt')
 df_areas = df_areas[['area_type_code', 'area_code']]
 
 # Only keep county information
@@ -117,12 +117,12 @@ def get_BLS_county_data(BLS_data_path, df_areas):
 
 #------------------------------------------------------------
 # Import all years of data
-df_unemp_90_94 = get_BLS_county_data('la_data_0_CurrentU90_94.txt', df_areas)
-df_unemp_95_99 = get_BLS_county_data('la_data_0_CurrentU95_99.txt', df_areas)
-df_unemp_00_04 = get_BLS_county_data('la_data_0_CurrentU00_04.txt', df_areas)
-df_unemp_05_09 = get_BLS_county_data('la_data_0_CurrentU05_09.txt', df_areas)
-df_unemp_10_14 = get_BLS_county_data('la_data_0_CurrentU10_14.txt', df_areas)
-df_unemp_15_19 = get_BLS_county_data('la_data_0_CurrentU15_19.txt', df_areas)
+df_unemp_90_94 = get_BLS_county_data('la.data.0.CurrentU90-94.txt', df_areas)
+df_unemp_95_99 = get_BLS_county_data('la.data.0.CurrentU95-99.txt', df_areas)
+df_unemp_00_04 = get_BLS_county_data('la.data.0.CurrentU00-04.txt', df_areas)
+df_unemp_05_09 = get_BLS_county_data('la.data.0.CurrentU05-09.txt', df_areas)
+df_unemp_10_14 = get_BLS_county_data('la.data.0.CurrentU10-14.txt', df_areas)
+df_unemp_15_19 = get_BLS_county_data('la.data.0.CurrentU15-19.txt', df_areas)
 
 #------------------------------------------------------------
 # Merge all year's data
