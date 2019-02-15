@@ -36,10 +36,10 @@ for xx in filenames:
 #------------------------------------------------------
 # Import area information
 df_areas = pd.read_table('la.area.txt')
-df_areas = df_areas[['area_type_code', 'area_code']]
+df_areas = df_areas[['area_code', 'area_text']]
 
 # Only keep county information
-df_areas = df_areas.loc[df_areas['area_type_code'].str.contains('CN')]
+df_areas = df_areas.loc[df_areas['area_code'].str.contains('CN')]
 df_areas.reset_index(drop=True, inplace=True)
 
 # Rename columns
